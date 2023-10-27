@@ -1,4 +1,3 @@
-"use client";
 import { useState } from "react";
 
 export default function Home() {
@@ -8,6 +7,7 @@ export default function Home() {
   const askQuestion = async () => {
     const res = await fetch("/api", {
       method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ question }),
     });
     const answer = await res.json();
