@@ -9,9 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@traceloop/node-server-sdk": "^0.0.13-alpha.8",
+    "@traceloop/node-server-sdk": "^0.3.11",
     "next": "13.5.6",
-    "openai": "^4.12.4",
+    "openai": "^4.28.0",
     "react": "^18",
     "react-dom": "^18"
   },
