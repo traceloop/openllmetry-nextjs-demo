@@ -5,13 +5,13 @@ export default function Home() {
   const [answer, setAnswer] = useState("");
 
   const askQuestion = async () => {
-    const res = await fetch("/api", {
+    const res = await fetch("/chat/api", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ question }),
     });
     const answer = await res.json();
-    setAnswer(answer.answer);
+    setAnswer(answer.data.answer);
   };
 
   return (
