@@ -21,5 +21,5 @@ export default async function handler(
     { question }
   );
 
-  return res.json({ answer });
+  return res.json({ data: { answer } });
 }

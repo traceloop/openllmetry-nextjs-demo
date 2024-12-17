@@ -1,8 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    instrumentationHook: true,
+  webpack: (config, { isServer }) => {
+    config.module.rules.push({
+      test: /\.node$/,
+      loader: "node-loader",
+    });
+    if (isServer) {
+      config.ignoreWarnings = [{ module: /opentelemetry/ }];
+    }
+    return config;
   },
+  transpilePackages: ["@traceloop/node-server-sdk"],
 };
 
 module.exports = nextConfig;
